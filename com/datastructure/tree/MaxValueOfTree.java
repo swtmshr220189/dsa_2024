@@ -24,24 +24,24 @@ public class MaxValueOfTree {
     // and keep on updating the Max variable
     // by comparing the Max and the Current travesed Node value.
 
-    public static void maxValueUsingQueue(TreeNode root){
+    public static void maxValueUsingQueue(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         int max = 0;
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeNode currNode = queue.poll();
             max = Math.max(max, currNode.value);
 //            System.out.println(currNode.value);
 
-            if(currNode.leftNode!=null){
+            if (currNode.leftNode != null) {
                 queue.offer(currNode.leftNode);
             }
-            if(currNode.rightNode!=null){
+            if (currNode.rightNode != null) {
                 queue.offer(currNode.rightNode);
             }
         }
-        System.out.println("Max value is : "+max);
+        System.out.println("Max value is : " + max);
 
     }
 
@@ -50,19 +50,19 @@ public class MaxValueOfTree {
         stack.push(root);
         int max = 0;
 
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             TreeNode currNode = stack.pop();
             max = Math.max(max, currNode.value);
 //            System.out.println(currNode.value);
 
-            if(currNode.leftNode!=null){
+            if (currNode.leftNode != null) {
                 stack.push(currNode.leftNode);
             }
-            if(currNode.rightNode!=null){
+            if (currNode.rightNode != null) {
                 stack.push(currNode.rightNode);
             }
         }
-        System.out.println("Max value is : "+max);
+        System.out.println("Max value is : " + max);
     }
 
     public static void main(String[] args) {
